@@ -1,0 +1,29 @@
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: red;
+  height: 30px;
+}
+
+.header nav li {
+  list-style: none;
+}
+
+.header nav li .link {
+  color: white;
+  text-decoration: none;
+  padding: 8px 10px 8px 5px;
+  border-radius: 5px;
+  margin-bottom: 1px;
+  background: #16b8e0;
+}
+
+.header nav li .link :first-child {
+  margin-right: 5px;
+  font-size: 16px;
+}
+/*# sourceMappingURL=heading.module.css.map */

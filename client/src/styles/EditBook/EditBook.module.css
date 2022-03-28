@@ -1,0 +1,42 @@
+.form {
+  width: 400px;
+  margin: 0 auto;
+  color: #525252;
+}
+
+.form .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+.form .buttons .edit_book {
+  font-size: 14px;
+  margin-right: 5px;
+  padding: 6px 12px 6px 10px;
+  background: #f8f548;
+}
+
+.form .buttons .link {
+  background: #f74141;
+  border-radius: 5px;
+  padding: 10px 12px 10px 9px;
+  text-decoration: none;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.form .buttons .link :first-child {
+  margin-right: 5px;
+}
+/*# sourceMappingURL=EditBook.module.css.map */

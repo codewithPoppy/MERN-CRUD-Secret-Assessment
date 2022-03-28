@@ -1,0 +1,32 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    color: red;
+    height: 30px;
+
+    nav{
+        li{
+            list-style: none;
+            .link{
+                color: white;
+                text-decoration: none;
+                padding: 8px 10px 8px 5px;
+                border-radius: 5px;
+                margin-bottom: 1px;
+                background: rgb(22, 184, 224);
+                & :first-child{
+                    margin-right: 5px;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+
+// .content-table 
+
+// .content-table th,
+// .content-table td {
+//     padding: 12px 15px;
+// }

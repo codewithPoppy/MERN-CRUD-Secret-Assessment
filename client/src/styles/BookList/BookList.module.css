@@ -1,0 +1,89 @@
+.content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 500px;
+  margin: 0 auto;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+  background-color: #009879;
+  color: #fff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.content-table thead tr th {
+  padding: 12px 15px;
+}
+
+.content-table thead tr .title {
+  width: 400px;
+}
+
+.content-table thead tr .author {
+  width: 200px;
+}
+
+.content-table thead tr .category {
+  width: 200px;
+}
+
+.content-table thead tr .price {
+  width: 100px;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-child(even) {
+  background: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.content-table tbody tr td {
+  padding: 12px 15px;
+}
+
+.content-table tbody tr td:last-child {
+  width: 196px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content-table tbody tr td:last-child #link {
+  color: black;
+  padding: 8px 10px;
+  background: #f8f548;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.content-table tbody tr td:last-child #link :first-child {
+  margin: 0 5px 0 0;
+}
+
+.content-table tbody tr td:last-child .button {
+  color: white;
+  margin-left: 10px;
+  background: #f74141;
+  padding: 8px 10px;
+}
+
+.content-table tbody tr td:last-child .button :first-child {
+  margin-right: 5px;
+  line-height: 50px;
+}
+/*# sourceMappingURL=BookList.module.css.map */

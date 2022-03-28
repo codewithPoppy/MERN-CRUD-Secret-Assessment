@@ -1,0 +1,48 @@
+.form {
+    width: 400px;
+    margin: 0 auto;
+    color: rgb(82, 82, 82);
+    .invalid{
+        border: 1px solid red;
+    }
+
+
+    .buttons {
+        display: flex;
+        font-size: 15px;
+        margin-top: 25px;
+        .disabled{
+            transition: 1s;
+            cursor: not-allowed;
+            padding: 6px 12px 6px 12px;
+            background: rgb(152, 153, 153);
+            color: white;
+            font-size: 15px;
+        }
+
+        .submit {
+            transition: 1s;
+            padding: 6px 12px 6px 12px;
+            background: rgb(22, 184, 224);
+            color: white;
+            font-size: 15px;
+        }
+        .link {
+            background: rgb(247, 65, 65);
+            margin-left: 5px;
+            border-radius: 5px;
+            padding: 6px 12px 6px 9px;
+            line-height: 23px;
+            text-decoration: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            & :first-child {
+                margin-right: 5px;
+            }
+        }
+    }
+
+    
+}

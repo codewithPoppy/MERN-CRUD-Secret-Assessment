@@ -1,0 +1,81 @@
+.content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 500px;
+    margin: 0 auto;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    thead {
+        tr {
+            background-color: #009879;
+            color: #fff;
+            text-align: left;
+            font-weight: bold;
+            th {
+                padding: 12px 15px;
+            }
+            .title {
+                width: 400px;
+            }
+            .author {
+                width: 200px;
+            }
+            .category {
+                width: 200px;
+            }
+            .price {
+                width: 100px;
+            }
+        }
+    }
+    tbody {
+        
+        tr {
+            border-bottom: 1px solid #dddddd;
+            &:nth-child(even) {
+                background: #f3f3f3;
+            }
+
+            &:last-of-type {
+                border-bottom: 2px solid #009879;
+            }
+
+            td {
+                &:last-child {
+                    width: 196px;
+                    display: flex;
+                    align-items: center;
+                    // font-size: 16px;
+
+                    #link {
+                        color: black;
+                        padding: 8px 10px;
+                        background: rgb(248, 245, 72);
+                        border-radius: 5px;
+                        text-decoration: none;
+                        // margin: 0 5px 0 0;
+                        & :first-child {
+                            margin: 0 5px 0 0;
+                        }
+                    }
+
+                    .button {
+                        color: white;
+                        & :first-child {
+                            margin-right: 5px;
+                            // margin-bottom: 5px;
+                            line-height: 50px;
+                        }
+
+                        margin-left: 10px;
+                        background: rgb(247, 65, 65);
+                        padding: 8px 10px;
+                    }
+                }
+                padding: 12px 15px;
+            }
+        }
+    }
+}
