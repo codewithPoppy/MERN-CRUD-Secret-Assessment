@@ -85,6 +85,8 @@ app.get("/secret/:hash", async (req, res) => {
     });
 });
 
-app.listen(3004, () => {
-  console.log("server runnig on port 3004");
+const PORT = process.env.PORT || 3004;
+
+app.listen(PORT, () => {
+  console.log("server runnig on port " + PORT);
 });
