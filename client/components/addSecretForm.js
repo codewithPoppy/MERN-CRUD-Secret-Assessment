@@ -113,7 +113,7 @@ export default function AddSecretForm() {
         >
           <DialogTitle>{"Secret saved successfully"}</DialogTitle>
           <DialogContent>
-            <Link href={`/secret/${fetchedSecret.hash}`}>
+            <Link href={`/secret/${fetchedSecret.hash}`} passHref>
               <a>Click here to see the secret you created</a>
             </Link>
           </DialogContent>

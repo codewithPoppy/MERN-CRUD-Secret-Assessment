@@ -34,7 +34,8 @@ To run the application on the web, follow the instructions :
 - `make sure you are inside the project's folder on VScode`
 - `open up a terminal`
 - run `yarn install` to install the dependencies of the project
-- inside the "server" folder run `yarn run devStart`<-- this will provide our data,  address `localhost:3004` 
+- inside the "server" folder run `yarn devStart`<-- this will provide our data,  address `localhost:3004` 
 - open a new terminal, inside the "client" folder, run `yarn start` to run the application, will open at the address `localhost:3000`
+- To test the project with cypress, inside the "client" folder, run `yarn cypress`.
 <br>
 
