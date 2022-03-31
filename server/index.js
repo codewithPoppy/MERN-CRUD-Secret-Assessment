@@ -1,72 +1,90 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const BookModel = require("./models/book");
+const { v4: uuidv4 } = require("uuid");
+
+const SecretModel = require("./models/Secret");
+
+const validator = (secret, expireAfter) => {
+  if (!secret || !expireAfter || secret === "" || expireAfter <= 0)
+    return { code: 405, errMessage: "Invalid input" };
+  return { code: 200, errMessage: null };
+};
+
 const app = express();
 
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect(
-    "mongodb+srv://dbUser:parafernalha@crud.j1xvh.mongodb.net/book?retryWrites=true&w=majority",
+app.use(express.urlencoded({ extended: true }));
+
+mongoose
+  .connect(
+    "mongodb+srv://pOppY-Secret:5A09da2LHbWx8uvY@cluster0.inkdu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
     {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
     }
-);
+  )
+  .then((res) => console.log("successfully connected DB"))
+  .catch((err) => console.log(err));
 
-app.post("/insert", async (req, res) => {
-    const bookName = req.body.bookName;
-    const bookPrice = req.body.bookPrice;
-    const bookAuthor = req.body.bookAuthor;
-    const bookCategory = req.body.bookCategory
-    const book = new BookModel({bookName: bookName, bookPrice: bookPrice, bookAuthor: bookAuthor, bookCategory: bookCategory});
+app.post("/secret", async (req, res) => {
+  const { secret, expireAfter } = req.body;
 
-    try {
-        await book.save();
-        res.send("inserted data");
-    } catch (err) {
-        console.log(err);
-    }
+  const { code, errMessage } = validator(secret, expireAfter);
+
+  if (errMessage) return res.status(code).json;
+
+  const createdAt = new Date();
+  const expiresAt = new Date();
+  expiresAt.setSeconds(createdAt.getSeconds() + parseInt(expireAfter));
+
+  const newSecret = new SecretModel({
+    hash: uuidv4(),
+    secretText: secret,
+    createdAt: createdAt,
+    expiresAt: expiresAt,
+  });
+
+  try {
+    await newSecret.save();
+    return res.status(200).json({
+      hash: newSecret.hash,
+      secretText: newSecret.secretText,
+      createdAt: newSecret.createdAt,
+      expiresAt: newSecret.expiresAt,
+    });
+  } catch (err) {
+    return res.status(405).json({ error: "Cannot create the secret" });
+  }
 });
 
-app.get("/read", async (req, res) => {
-    // FoodModel.find({$where: {foodName:  "Apple"}}, )
-    BookModel.find({}, (err, results) => {
-        if (err) {
-            res.send(err);
-        }
+app.get("/secret/:hash", async (req, res) => {
+  const hash = req.params.hash;
 
-        res.send(results);
+  SecretModel.findOne({ hash: hash })
+    .then((result) => {
+      if (!result) return res.status(404).json({ error: "Secret not found" });
+
+      const expireTime = new Date(result.expiresAt);
+      const currentTime = new Date();
+
+      if (expireTime.getTime() < currentTime.getTime())
+        return res.status(404).json({ error: "Secret expired" });
+
+      return res.status(200).json({
+        hash: result.hash,
+        secretText: result.secretText,
+        createdAt: result.createdAt,
+        expiresAt: result.expiresAt,
+      });
+    })
+    .catch((err) => {
+      return res.status(404).json({ error: "Secret not found" });
     });
 });
 
-app.put("/update", async (req, res) => {
-    const id = req.body.id;
-    const bookName = req.body.bookName;
-    const bookAuthor = req.body.bookAuthor;
-    const bookPrice = req.body.bookPrice;
-    const bookCategory = req.body.bookCategory;
-    try {
-        await BookModel.findById(id, (err, updateBook) => {
-            updateBook.bookName = bookName;
-            updateBook.bookAuthor = bookAuthor;
-            updateBook.bookPrice = bookPrice;
-            updateBook.bookCategory = bookCategory;
-            updateBook.save();
-            res.send("updated");
-        });
-    } catch (err) {
-        console.log(err);
-    }
-});
-
-app.delete("/delete/:id", async (req, res) => {
-    const id = req.params.id;
-    await BookModel.findByIdAndRemove(id).exec();
-    res.send("deleted");
-});
-
 app.listen(3004, () => {
-    console.log("server runnig on port 3004");
+  console.log("server runnig on port 3004");
 });

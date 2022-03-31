@@ -1,40 +1,14 @@
 
-## **<h2 align="center">Books Collection 💻</h2>**
+## **<h2 align="center">Secret Management with MERN stack 💻</h2>**
 
 <h2 align="center"> 
-       😎 Personal Project ✔️
+       😎 Home Assessment ✔️
 </h2>
-<br>
-<p align="center">
-  <a href="#computer-demonstration-of-the-application">Demonstration of the application</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#star-features">Features</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#rocket-technologies-used">Technologies used</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#information_source-application-installation">Application installation</a>
-</p>
-
-# :computer: Demonstration of the application
-
-<p align="center">
-  <img src="https://ik.imagekit.io/mcvhbcq4zu/gif_QHMUA4uUU.gif?updatedAt=1630280689097" width="1400px"/>
-</p>
-
-<br>
-
-<h3 align="center"> 
-	Application status: Developed ✔️
-</h3>
 <br>
 
 
 ## About
-CRUD App using MERN Stack, it uses ReactJS for Front-end, NodeJS, Express For the Backend, and Mongo DB as database! in this project, you can have books collection which has a field for Title, Author, Category and price, you can add, update, and delete items! it has a form validation to make sure that the user doesn't send invalid info to the database.
-
-## :star: Features
-- [x] Create Book
-- [x] Update Book
-- [x] Remove Book
-- [x] Form Validation
-
+Secret Management App using MERN Stack, it uses ReactJS for Front-end, NodeJS, Express For the Backend, and Mongo DB as database!
 
 ## :rocket: Technologies used:
 <p align="center">
@@ -51,7 +25,7 @@ CRUD App using MERN Stack, it uses ReactJS for Front-end, NodeJS, Express For th
 <br>
 
 ## :information_source: Application installation
-- `https://github.com/VictorLira-DEV/CRUD-APP.git` to clone the repository
+- `https://github.com/codewithPoppy/MERN-CRUD-Secret-Assessment.git` to clone the repository
 
 <br>
 
