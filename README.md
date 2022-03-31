@@ -4,6 +4,9 @@
 <h2 align="center"> 
        😎 Home Assessment ✔️
 </h2>
+
+### [Backend is running here(heroku)](https://yev-secret-management.herokuapp.com)
+### [Frontend is running here(netlify)](https://yev-secret-management.netlify.app)
 <br>
 
 
